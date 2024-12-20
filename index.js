@@ -11,27 +11,30 @@ const app = express();
 // Connect to the database
 connectDB();
 
-// CORS Setup (allowing localhost:3000)
 app.use(cors({
-  origin: '*', // Allow requests from any origin
+  origin: "http://localhost:3000", // Allow requests from your React app
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization"], // Include any custom headers
 }));
 
+res.setHeader('Access-Control-Allow-Origin', '*');
 
 app.use(express.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/questions", qRoutes);
-app.use("/api/games", gRoutes); // Game routes
-app.use("/api/dashboard", dRoutes); // Dashboard routes (changed to /api/dashboard to avoid conflict)
+app.use("/api/games", gRoutes);
+app.use("/api/games", dRoutes);
 app.use("/api/profile", pRoutes);
 app.use('/uploads', express.static('uploads'));
 
 // Fallback Route
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello from Vercel!" });
+});
+app.get("/rash", (req, res) => {
+  res.status(200).json({ message: "Rash ghost" });
 });
 
 module.exports = app;

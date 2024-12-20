@@ -64,6 +64,10 @@ router.post("/game-stats", async (req, res) => {
     }
 });
 
+router.get("/rash1", (req, res) => {
+    res.status(200).json({ message: "Rash123 ghost" });
+  });
+
 router.get("/leaderboard", async (req, res) => {
     const { userId, country } = req.query;
 
