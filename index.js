@@ -10,8 +10,8 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
-app.use(express.json()); 
+// app.use(cors());
+// app.use(express.json()); 
 
 app.use("/api/auth", authRoutes); 
 app.use("/api/questions", qRoutes); 
@@ -21,7 +21,7 @@ app.use("/api/profile", pRoutes);
 app.use('/uploads', express.static('uploads'));
 
 
-app.get("/", (req, res) => {
+app.use("/", (req, res) => {
   res.status(200).json({ message: "Hello from Vercel!" });
 });
 
