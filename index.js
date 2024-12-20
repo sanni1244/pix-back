@@ -2,7 +2,6 @@
 
 
 
-// app.use(express.json()); 
 // app.use("/api/auth", authRoutes); 
 // app.use("/api/questions", qRoutes); 
 // app.use("/api/games", gRoutes); 
@@ -29,6 +28,11 @@ dotenv.config();
 connectDB();
 
 app.use(cors());
+
+
+
+app.use(express.json()); 
+
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello from Vercel!" });
