@@ -1,10 +1,7 @@
 
-// dotenv.config();
-// connectDB();
 
-// const app = express();
 
-// app.use(cors());
+
 // app.use(express.json()); 
 // app.use("/api/auth", authRoutes); 
 // app.use("/api/questions", qRoutes); 
@@ -26,6 +23,10 @@ const gRoutes = require("./routes/gameRoutes");
 const dRoutes = require("./routes/dashboard");
 const pRoutes = require("./routes/profileRoutes");
 const app = express();
+
+
+dotenv.config();
+connectDB();
 
 app.use(cors());
 
