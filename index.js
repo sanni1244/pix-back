@@ -13,10 +13,11 @@ connectDB();
 
 // CORS Setup (allowing localhost:3000)
 app.use(cors({
-  origin: "http://localhost:3000", // Allow requests from your React app
+  origin: '*', // Allow requests from any origin
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"], // Include any custom headers
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
 
 app.use(express.json());
 
