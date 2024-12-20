@@ -11,21 +11,20 @@ const app = express();
 // Connect to the database
 connectDB();
 
+// CORS Setup (allowing localhost:3000)
 app.use(cors({
   origin: "http://localhost:3000", // Allow requests from your React app
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"], // Include any custom headers
 }));
 
-res.setHeader('Access-Control-Allow-Origin', '*');
-
 app.use(express.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/questions", qRoutes);
-app.use("/api/games", gRoutes);
-app.use("/api/games", dRoutes);
+app.use("/api/games", gRoutes); // Game routes
+app.use("/api/dashboard", dRoutes); // Dashboard routes (changed to /api/dashboard to avoid conflict)
 app.use("/api/profile", pRoutes);
 app.use('/uploads', express.static('uploads'));
 
