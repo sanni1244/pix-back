@@ -11,8 +11,13 @@ const app = express();
 // Connect to the database
 connectDB();
 
-// Middleware
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3000", // Allow requests from your React app
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"], // Include any custom headers
+}));
+
+
 app.use(express.json());
 
 // Routes
