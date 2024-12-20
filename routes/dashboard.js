@@ -1,5 +1,5 @@
 const express = require("express");
-const { GameStats } = require("../models/game"); // Ensure GameStats is imported correctly
+const { GameStats } = require("../models/game");
 const router = express.Router();
 
 router.get("/user-stats", async (req, res) => {
@@ -19,3 +19,4 @@ router.get("/user-stats", async (req, res) => {
 });
 
 module.exports = router;
+
