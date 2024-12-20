@@ -16,7 +16,7 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"], // Include any custom headers
 }));
-
+app.options( '*' , cors())
 res.setHeader('Access-Control-Allow-Origin', '*');
 
 app.use(express.json());
@@ -30,11 +30,9 @@ app.use("/api/profile", pRoutes);
 app.use('/uploads', express.static('uploads'));
 
 // Fallback Route
-app.get("/", (req, res) => {
+app.get("/asd", (req, res) => {
   res.status(200).json({ message: "Hello from Vercel!" });
 });
-app.get("/rash", (req, res) => {
-  res.status(200).json({ message: "Rash ghost" });
-});
+
 
 module.exports = app;
