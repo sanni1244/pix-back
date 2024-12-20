@@ -4,6 +4,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const qRoutes = require("./routes/questionRoutes");
 const gRoutes = require("./routes/gameRoutes");
+const dRoutes = require("./routes/dashboard");
 const pRoutes = require("./routes/profileRoutes");
 const app = express();
 
