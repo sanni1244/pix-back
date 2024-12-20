@@ -7,6 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 // const gRoutes = require("./routes/gameRoutes");
 // const dRoutes = require("./routes/dashboard");
 // const pRoutes = require("./routes/profileRoutes");
+const port = 5000;
 
 dotenv.config();
 connectDB();
@@ -30,4 +31,6 @@ app.use("/api/auth", authRoutes);
 // Static file serving for uploads
 // app.use('/uploads', express.static('uploads'));
 
-module.exports = app;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
