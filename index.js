@@ -25,7 +25,7 @@ const pRoutes = require("./routes/profileRoutes");
 const app = express();
 
 
-dotenv.config();
+// dotenv.config();
 connectDB();
 
 app.use(cors());
